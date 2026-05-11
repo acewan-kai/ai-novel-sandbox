@@ -177,8 +177,6 @@ class DeepSeekClient:
                     temperature=self.llm_config["temperature"],
                     max_tokens=self.llm_config["max_tokens"],
                     top_p=self.llm_config["top_p"],
-                    # DeepSeek V4 特定参数
-                    thinking={"type": "disabled"},  # 禁用思考模式，加快响应
                 )
                 
                 content = response.choices[0].message.content.strip()
