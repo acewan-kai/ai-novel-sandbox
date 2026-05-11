@@ -1,0 +1,321 @@
+# 10个NPC角色定义
+# 每个角色拥有：姓名、身份、性格简档、初始关系、短期目标
+
+npcs:
+  - id: "npc_001"
+    name: "李沉渊"
+    age: 45
+    gender: "男"
+    identity: "村长"
+    personality: |
+      沉稳老练，城府极深。表面是德高望重的村长，实则曾是前朝大员，
+      因卷入政治风波隐居于此。对村中一切了如指掌，却从不多言。
+    background: |
+      前朝兵部侍郎，三十年前辞官归隐。
+      有一子李青云，十年前外出求学后杳无音讯。
+    traits:
+      openness: 3  # 谨慎保守
+      conscientiousness: 5  # 极有责任心
+      extraversion: 2  # 内敛沉默
+      agreeableness: 3  # 不卑不亢
+      neuroticism: 2  # 情绪稳定
+    short_term_goal: "维护村庄稳定，暗中调查近期海上的异象"
+    current_location: "村长宅院"
+    relationships:
+      - target: "npc_002"
+        type: "信任"
+        level: 4
+        note: "多年的老友"
+      - target: "npc_003"
+        type: "警惕"
+        level: 3
+        note: "此人来历不明"
+      - target: "npc_004"
+        type: "敌意"
+        level: 2
+        note: "曾被我驱逐过的书生"
+
+  - id: "npc_002"
+    name: "张铁柱"
+    age: 52
+    gender: "男"
+    identity: "老渔夫"
+    personality: |
+      豪爽直率，嗓门极大。年轻时是村中第一渔夫，如今年老体衰，
+      但不服老。爱讲往事，尤其是年轻时与海盗搏斗的故事。
+    background: |
+      二十年前救过村长一命，从此成为至交。
+      曾有一女，嫁到外地后音讯渐无。
+    traits:
+      openness: 2
+      conscientiousness: 3
+      extraversion: 5  # 极度外向
+      agreeableness: 4
+      neuroticism: 1  # 乐观豁达
+    short_term_goal: "今天要修好破旧的渔网"
+    current_location: "渔港码头"
+    relationships:
+      - target: "npc_001"
+        type: "信任"
+        level: 5
+        note: "过命的交情"
+      - target: "npc_005"
+        type: "照顾"
+        level: 4
+        note: "看着她长大"
+
+  - id: "npc_003"
+    name: "沈墨白"
+    age: 28
+    gender: "男"
+    identity: "游方郎中"
+    personality: |
+      温文尔雅，谈吐不凡。医术高超，药到病除。
+      但总是若有所思，似乎在寻找什么。
+    background: |
+      三月前来到村里，自称云游四方、行医济世。
+      药铺老板周掌柜对他十分敬重，常与他彻夜长谈。
+    traits:
+      openness: 5  # 博学多才
+      conscientiousness: 4
+      extraversion: 3
+      agreeableness: 4
+      neuroticism: 3
+    short_term_goal: "寻找失踪之人的下落"
+    current_location: "茶馆"
+    relationships:
+      - target: "npc_006"
+        type: "敬重"
+        level: 5
+        note: "忘年之交"
+      - target: "npc_001"
+        type: "试探"
+        level: 3
+        note: "在观察村长"
+      - target: "npc_007"
+        type: "好奇"
+        level: 3
+        note: "此人身份可疑"
+
+  - id: "npc_004"
+    name: "周文秀"
+    age: 22
+    gender: "女"
+    identity: "落魄书生"
+    personality: |
+      清高自傲，愤世嫉俗。满腹经纶却屡试不第，
+      一怒之下撕毁功名文书，云游天下。
+    background: |
+      三个月前被村长以"动摇人心"为由驱逐出村，
+      但她不服气，悄悄潜伏在村外废弃祠堂。
+    traits:
+      openness: 4
+      conscientiousness: 3
+      extraversion: 2
+      agreeableness: 2  # 脾气古怪
+      neuroticism: 4  # 多愁善感
+    short_term_goal: "找到证据揭发村长的秘密"
+    current_location: "废弃祠堂"
+    relationships:
+      - target: "npc_001"
+        type: "仇恨"
+        level: 4
+        note: "此仇不共戴天"
+      - target: "npc_007"
+        type: "利用"
+        level: 2
+        note: "想利用她打探消息"
+
+  - id: "npc_005"
+    name: "阿莲"
+    age: 17
+    gender: "女"
+    identity: "渔家少女"
+    personality: |
+      天真烂漫，单纯善良。对外面的世界充满好奇，
+      但被父亲管束甚严，从未出过岛。
+    background: |
+      铁柱的侄女，父母早亡，由铁柱抚养长大。
+      心仪茶馆的小二阿福，但羞于启齿。
+    traits:
+      openness: 4
+      conscientiousness: 3
+      extraversion: 4
+      agreeableness: 5
+      neuroticism: 2
+    short_term_goal: "今天想去茶馆听听外面的故事"
+    current_location: "渔港码头"
+    relationships:
+      - target: "npc_002"
+        type: "依赖"
+        level: 5
+        note: "视如生父"
+      - target: "npc_008"
+        type: "暗恋"
+        level: 4
+        note: "心中秘密"
+      - target: "npc_009"
+        type: "警惕"
+        level: 2
+        note: "她总是盯着我看"
+
+  - id: "npc_006"
+    name: "周掌柜"
+    age: 58
+    gender: "男"
+    identity: "药铺老板"
+    personality: |
+      慈眉善目，妙手仁心。药铺开了三十年，
+      村中几乎每个孩子都是他接生的。
+    background: |
+      表面是普通药铺老板，实则是村长年轻时的救命恩人。
+      曾是江湖游医，退隐后开此药铺。
+    traits:
+      openness: 4
+      conscientiousness: 5
+      extraversion: 3
+      agreeableness: 5
+      neuroticism: 1
+    short_term_goal: "研究新药材配方"
+    current_location: "药铺"
+    relationships:
+      - target: "npc_001"
+        type: "守护"
+        level: 5
+        note: "多年的秘密"
+      - target: "npc_003"
+        type: "欣赏"
+        level: 5
+        note: "难得的后辈"
+      - target: "npc_007"
+        type: "怀疑"
+        level: 3
+        note: "此人目的不明"
+
+  - id: "npc_007"
+    name: "神秘商人"
+    age: 35
+    gender: "男"
+    identity: "行商"
+    personality: |
+      神秘莫测，笑容可掬。什么都卖，什么都买，
+      但开价往往令人捉摸不透。
+    background: |
+      半年前来到村里，以低价卖香料和稀罕物件。
+      没人知道他的真实姓名，也没人知道他的货物从何而来。
+    traits:
+      openness: 5
+      conscientiousness: 3
+      extraversion: 4
+      agreeableness: 3
+      neuroticism: 2
+    short_term_goal: "寻找有价值的'货物'"
+    current_location: "茶馆"
+    relationships:
+      - target: "npc_001"
+        type: "商业往来"
+        level: 3
+        note: "偶尔做些交易"
+      - target: "npc_004"
+        type: "接触"
+        level: 2
+        note: "在观察她"
+      - target: "npc_009"
+        type: "警惕"
+        level: 4
+        note: "这个女子不简单"
+
+  - id: "npc_008"
+    name: "阿福"
+    age: 20
+    gender: "男"
+    identity: "茶馆小二"
+    personality: |
+      机灵勤快，能说会道。在茶馆干了三年，
+      村里大事小情都略知一二。
+    background: |
+      孤儿出身，由周掌柜收养。
+      对阿莲有意，但自觉配不上她。
+    traits:
+      openness: 3
+      conscientiousness: 4
+      extraversion: 5
+      agreeableness: 4
+      neuroticism: 2
+    short_term_goal: "打探到茶馆来的外乡人的消息"
+    current_location: "茶馆"
+    relationships:
+      - target: "npc_005"
+        type: "暗恋"
+        level: 4
+        note: "不敢表白"
+      - target: "npc_003"
+        type: "佩服"
+        level: 4
+        note: "沈大夫学问真大"
+      - target: "npc_002"
+        type: "尊敬"
+        level: 3
+        note: "铁柱叔是条好汉"
+
+  - id: "npc_009"
+    name: "红菱"
+    age: 26
+    gender: "女"
+    identity: "来历不明的女子"
+    personality: |
+      美艳动人，言语间带着风尘气息。
+      自称是投亲途中遭遇海难，漂流至此。
+    background: |
+      三天前被海水冲到海边，被村民救起。
+      她说要去投奔远房亲戚，但至今没有要走的意思。
+    traits:
+      openness: 4
+      conscientiousness: 2
+      extraversion: 4
+      agreeableness: 3
+      neuroticism: 4  # 内心不安
+    short_term_goal: "弄清楚村里有没有能帮我离开的人"
+    current_location: "村口老槐树"
+    relationships:
+      - target: "npc_001"
+        type: "试探"
+        level: 3
+        note: "村长似乎知道些什么"
+      - target: "npc_007"
+        type: "警惕"
+        level: 3
+        note: "这个商人一直在观察我"
+      - target: "npc_005"
+        type: "示好"
+        level: 3
+        note: "这个小姑娘或许可以利用"
+
+  - id: "npc_010"
+    name: "哑巴老妪"
+    age: 70
+    gender: "女"
+    identity: "守庙人"
+    personality: |
+      从不说话，每日只是在废弃祠堂前静坐。
+      村里人都敬她、怕她，据说她是祠堂最后一位祭司。
+    background: |
+      三十年前那场政治风波中，她失去了全家。
+      从此不再言语，成为守护祠堂的"活死人"。
+    traits:
+      openness: 2
+      conscientiousness: 5
+      extraversion: 1  # 极度内向
+      agreeableness: 3
+      neuroticism: 5  # 内心创伤
+    short_term_goal: "等待某个时机"
+    current_location: "废弃祠堂"
+    relationships:
+      - target: "npc_004"
+        type: "观察"
+        level: 3
+        note: "这个女子也住在这里"
+      - target: "npc_001"
+        type: "恨"
+        level: 5
+        note: "三十年前的血债"
