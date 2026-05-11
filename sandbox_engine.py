@@ -163,16 +163,17 @@ async def main():
     print("PoC Sandbox Engine - 沉浸式AI小说创作平台")
     print()
     
-    # 检查API密钥或启用模拟模式
+    # 检查API密钥
     if not config.DEEPSEEK_API_KEY:
-        if not config.MOCK_MODE:
-            print("[ERROR] 请设置 DEEPSEEK_API_KEY 环境变量")
-            print("   export DEEPSEEK_API_KEY='your-api-key'  (Linux/Mac)")
-            print("   $env:DEEPSEEK_API_KEY='your-api-key'   (Windows PowerShell)")
-            print("   或在config.py中设置 MOCK_MODE=True 启用模拟模式")
-            return
-        else:
-            print("[MODE] 运行于模拟模式 (MOCK_MODE=True)")
+        print("[ERROR] 请先在 .env 文件中设置 DEEPSEEK_API_KEY")
+        print("   示例: DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxx")
+        print()
+        print("   如果想使用模拟模式测试，请在 config.py 中设置 MOCK_MODE=True")
+        return
+    else:
+        print(f"[INFO] API密钥已设置 (长度: {len(config.DEEPSEEK_API_KEY)})")
+        print(f"[INFO] API URL: {config.DEEPSEEK_API_URL}")
+        print(f"[INFO] 模型: {config.DEEPSEEK_MODEL}")
     
     # 创建引擎
     engine = create_engine()

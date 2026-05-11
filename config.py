@@ -23,8 +23,9 @@ DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_API_URL = os.environ.get("DEEPSEEK_API_URL", "https://api.deepseek.com/v1/chat/completions")
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
 
-# 启用模拟模式（当没有API密钥时自动启用）
-MOCK_MODE = not bool(DEEPSEEK_API_KEY)
+# 启用模拟模式（默认关闭，需要真实API密钥）
+# 设置为 True 可在无API密钥时使用模拟数据进行测试
+MOCK_MODE = False
 
 # LLM配置
 LLM_CONFIG = {
