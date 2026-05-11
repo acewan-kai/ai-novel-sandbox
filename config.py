@@ -19,9 +19,20 @@ if _env_file.exists():
                 os.environ.setdefault(key.strip(), value.strip())
 
 # API配置
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-DEEPSEEK_API_URL = os.environ.get("DEEPSEEK_API_URL", "https://api.deepseek.com/v1/chat/completions")
-DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+# 支持两种模式：
+# 1. DeepSeek 官方 API (默认)
+# 2. 阿里云百炼 DeepSeek V4 (取消注释下面两行)
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "") or os.environ.get("DASHSCOPE_API_KEY", "")
+
+# 选择API模式
+USE_DASHSCOPE = False  # 设为 True 使用阿里云百炼
+
+if USE_DASHSCOPE:
+    DEEPSEEK_API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    DEEPSEEK_MODEL = "deepseek-v4-pro"  # 阿里云百炼 DeepSeek V4
+else:
+    DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
+    DEEPSEEK_MODEL = "deepseek-chat"  # DeepSeek 官方模型
 
 # 启用模拟模式（默认关闭，需要真实API密钥）
 # 设置为 True 可在无API密钥时使用模拟数据进行测试
