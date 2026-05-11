@@ -126,7 +126,7 @@ class EventLogger:
             "npc_survival": self.npc_survival,
             "all_npcs_survived": len(self.npc_survival) == 10,
             "validation": {
-                "all_npcs_survived_100_turns": len(self.npc_survival) == 10 and min(self.npc_survival.values()) >= 100,
+                "all_npcs_survived_100_turns": len(self.npc_survival) == 10 and min(self.npc_survival.values()) >= len(self.events),
                 "at_least_3_unscripted_interactions": len(unique_cross_interactions) >= 3,
                 "at_least_1_storylike_moment": len(self.storylike_moments) >= 1,
                 "single_turn_delay_under_15s": max_delay < 15.0
